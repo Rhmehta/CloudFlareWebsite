@@ -47,10 +47,10 @@ body{
   border-style: solid;
   border-color:white;
   border-radius: 25px;
+  padding-top:0%;
   padding: 1%;
   margin: 5%;
   width: 400px;
-  height: 100px;
   text-align: center;
   transition: 1s;
 
@@ -104,11 +104,26 @@ body{
 .label{
   color: white;
   font-size: 20px;
-  align-items: right;
+  text-align: right;
   margin-right: 20px;
   float: left;
+  width: 100px;
+  font-weight: bold;
 }
 
 #content{
   height: 100px;
+  width: 300px;
+}
+
+#title, #username{
+  width: 300px;
+}
+
+.content{
+  margin-top: -15px;
+}
+
+.post{
+  padding: 15px;
 }

@@ -1,10 +1,11 @@
 import React, { useEffect,useState} from "react";
 import "./App.css";
 
+
 let listy=[];
 function App() {
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
+  useEffect(() => { //gets all posts from api
     const getPosts = async () => {
       const resp = await fetch(
         "https://rehaan_workers.rhmehta.workers.dev/posts"
@@ -12,7 +13,6 @@ function App() {
       setLoading(true);
       const postsResp = await resp.text();
       listy=JSON.parse(postsResp);
-      console.log(postsResp);
       setLoading(false);
     };
     getPosts();
@@ -20,8 +20,8 @@ function App() {
   if(loading) return (
     <span>Loading</span>
   );
-  return (
-    <div className="App">
+  return (//sets up html of page
+    <div className="App"> 
       <header className="App-header">
         <h1 className="App-title">Cloudflare Internship Social Media!</h1>
       </header>
@@ -29,11 +29,11 @@ function App() {
       <div id="body">
         <div id ="listy"> {listy.map(function(d, idx){
           return (<div className="post" key={idx}>
-            <div className="title">
+            <div className="titleText">
               <h2>{d.title}</h2>
             </div>
-            <div className="content">
-            <strong>{d.username}:</strong> {d.content}
+            <div className="content" id="text">
+              <strong>{d.username}:</strong> {d.content}
             </div>
             
             </div>)
@@ -66,7 +66,7 @@ function App() {
 
 }
 function submitPost(event){
- 
+ //post call to add a new post
     const setPost = async () => {
       const resp = await fetch('https://rehaan_workers.rhmehta.workers.dev/posts', {
         mode: 'no-cors',
@@ -94,4 +94,5 @@ function openForm(){
   document.querySelector('#submit').style.display ='inline';
   
 }
+
 export default App;
