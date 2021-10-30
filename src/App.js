@@ -12,6 +12,7 @@ function App() {
       setLoading(true);
       const postsResp = await resp.text();
       listy=JSON.parse(postsResp);
+      console.log(postsResp);
       setLoading(false);
     };
     getPosts();
