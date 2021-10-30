@@ -42,23 +42,23 @@ body{
 }
 
 .post{
-  background-color: #06BEE1;
-  color:white;
+  background-color:rgba(6, 190, 225,0.5);
+  color:rgba(255,255,255,0.5);
   border-style: solid;
   border-color:white;
   border-radius: 25px;
   padding: 1%;
   margin: 5%;
-  opacity: 50%;
   width: 400px;
   height: 100px;
   text-align: center;
   transition: 1s;
 
 }
-/* .post:hover{
-  opacity: 100%;
-} */
+.post:hover{
+  background-color:rgba(6, 190, 225,1);
+  color:rgba(255,255,255,1);
+}
 
 #listy{
   display: flex;
