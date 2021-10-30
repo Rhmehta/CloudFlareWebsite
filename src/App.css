@@ -56,9 +56,9 @@ body{
   transition: 1s;
 
 }
-.post:hover{
+/* .post:hover{
   opacity: 100%;
-}
+} */
 
 #listy{
   display: flex;
